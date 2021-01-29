@@ -24,7 +24,19 @@
 
 10.生产力工具 utools screenkey
 
-11.游戏 steam （需要启用mutilib）
+11.游戏 steam （需要启用mutilib）需要安装 steam-fonts
+
+12.通信工具 teamviewer
+
+````bash
+sudo systemctl enable teamviewerd.service
+````
+
+13.视频推流：obs-studio
+
+14.图形处理：inkscape gimp
+
+15.图形查看工具  Gwenview
 
 
 
@@ -46,15 +58,7 @@ yay换源
 yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
 ```
 
-**系统美化**
 
-kde plasma 样式
-
-WhiteSur-dark 
-
-窗口装饰也是WhiteSur
-
-图标：sudo pacman -S papirus-icon-theme
 
 连接到github
 
@@ -129,3 +133,35 @@ vim ~/.zshrc
   ```
   
   
+
+**系统美化**
+
+kde plasma 样式
+
+WhiteSur-dark 
+
+窗口装饰也是WhiteSur
+
+图标：sudo pacman -S papirus-icon-theme
+
+壁纸：https://wall.alphacoders.com/by_sub_category.php?id=193044&name=%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B+%E5%A3%81%E7%BA%B8&lang=Chinese
+
+
+
+下载安装QQ等软件
+
+yay qq （linuxqq）
+
+yay wechat （wechat-uos-2:2.0.0-11451419）
+
+
+
+开机自启动的应用
+
+1. latte dock 
+2. fcitx
+3. utools
+4. screenkey
+
+
+
