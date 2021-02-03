@@ -26,6 +26,24 @@
 
 11.游戏 steam （需要启用mutilib）需要安装 steam-fonts
 
+然后为了性能需要安装nvidia 
+
+````bash
+sudo pacman -S bumblebee
+sudo pacman -S nvidia
+sudo systemctl enable bumblebeed.service
+sudo pacman -S virtualgl
+optirun  glxspheres64 #测试性能
+````
+
+然后再安装 primusrun
+
+vblank_mode=0 primusrun %command%
+
+vblank_mode=0 primusrun %command% -language schinese -international -perfectworld
+
+
+
 12.通信工具 teamviewer
 
 ````bash
@@ -46,13 +64,13 @@ sudo systemctl enable teamviewerd.service
 
 
 
-Kde插件
+### Kde插件
 
 panon lanuchpad-plasma  Netspeed-Widget
 
 
 
-yay换源
+### yay换源
 
 ```bash
 yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
@@ -60,7 +78,7 @@ yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
 
 
 
-连接到github
+### 连接到github
 
 ```bash
 ssh-keygen -t rsa -C "1041370212@qq.com"
@@ -68,7 +86,7 @@ ssh-keygen -t rsa -C "1041370212@qq.com"
 
 
 
-配置终端
+### **配置终端**
 
 改变终端为zsh
 
@@ -100,7 +118,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 vim ~/.zshrc #在pulgin那一个括号里面加上这两个插件的名称
 ```
 
-终极美化powerline10K
+**终极美化powerline10K**
 
 https://github.com/romkatv/powerlevel10k#oh-my-zsh
 
@@ -134,7 +152,7 @@ vim ~/.zshrc
   
   
 
-**系统美化**
+### **系统美化**
 
 kde plasma 样式
 
@@ -148,20 +166,62 @@ WhiteSur-dark
 
 
 
-下载安装QQ等软件
+### **下载安装QQ等软件**
 
-yay qq （linuxqq）
+yay qq （linuxqq）（deepin-wine-tim）好像这个版本不需要下载什么xsettings就可以运行deepin-wine-tim了果断删除linuxqq
+
+deepin.com.qq.office真香
+
+```bash
+/opt/deepinwine/apps/Deepin-TIM
+
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx" #需要粘贴在最后一句话的前面不然没用
+```
+
+
+
+```bash
+sudo pacman -S 	xsettingsd
+cp /usr/bin/xsettingsd ~/.config/autostart-scripts/
+```
+
+````bash
+sudo pacman-S wqy-microhei #这是deepin.com.qq.office需要的字体但是安装了好像也没什么用
+````
+
+
 
 yay wechat （wechat-uos-2:2.0.0-11451419）
 
 
 
-开机自启动的应用
+### **开机自启动的应用**
 
 1. latte dock 
 2. fcitx
 3. utools
 4. screenkey
+
+### **开机启动小键盘**
+
+转到“*系统设置”>“输入设备”>“键盘”*，在“*硬件”*选项卡的“*等离子启动时*的*NumLock”*部分中，选择所需的NumLock行为。（这个会在输入密码之后打开数字键盘，而不是在开机后登陆界面就打开小键盘）
+
+````
+vim /etc/sddm.conf #因为我用的是kde桌面，所以会在sddm.conf.d里面读取配置所以这里可以直接编辑vim /etc/sddm.d/kde_settings.conf 
+[General]
+...
+Numblock=on
+````
+
+
+
+```bash
+yay gnome-system-monitor  #gnome家的好看多了
+
+sudo pacman -Rsn ksysguard #系统自带但是删除不了
+```
 
 
 
