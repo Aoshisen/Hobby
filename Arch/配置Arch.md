@@ -166,37 +166,6 @@ WhiteSur-dark
 
 
 
-### **下载安装QQ等软件**
-
-yay qq （linuxqq）（deepin-wine-tim）好像这个版本不需要下载什么xsettings就可以运行deepin-wine-tim了果断删除linuxqq
-
-deepin.com.qq.office真香
-
-```bash
-/opt/deepinwine/apps/Deepin-TIM
-
-export XMODIFIERS="@im=fcitx"
-export GTK_IM_MODULE="fcitx"
-export QT_IM_MODULE="fcitx" #需要粘贴在最后一句话的前面不然没用
-```
-
-
-
-```bash
-sudo pacman -S 	xsettingsd
-cp /usr/bin/xsettingsd ~/.config/autostart-scripts/
-```
-
-````bash
-sudo pacman-S wqy-microhei #这是deepin.com.qq.office需要的字体但是安装了好像也没什么用
-````
-
-
-
-yay wechat （wechat-uos-2:2.0.0-11451419）
-
-
-
 ### **开机自启动的应用**
 
 1. latte dock 
@@ -224,4 +193,38 @@ sudo pacman -Rsn ksysguard #系统自带但是删除不了
 ```
 
 
+
+### **下载安装QQ等软件**
+
+yay qq （linuxqq）（deepin-wine-tim）好像这个版本不需要下载什么xsettings就可以运行deepin-wine-tim了果断删除linuxqq
+
+deepin.com.qq.office真香
+
+但是后来这个也挂掉了，因为版本太低的原因后来用的是这个**com.qq.tim.spark 3.2.0.21856spark0-1** 也会有无法输入中文的现象，方法仿照下面的修改就行了，这个简直完美
+
+
+
+```bash
+/opt/deepinwine/apps/Deepin-TIM
+/opt/apps/com.qq.tim.spark/files/run.sh
+
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx" #需要粘贴在最后一句话的前面不然没用
+```
+
+
+
+```bash
+sudo pacman -S 	xsettingsd
+cp /usr/bin/xsettingsd ~/.config/autostart-scripts/
+```
+
+````bash
+sudo pacman-S wqy-microhei #这是deepin.com.qq.office需要的字体但是安装了好像也没什么用
+````
+
+
+
+yay wechat （wechat-uos-2:2.0.0-11451419）
 
